@@ -1,0 +1,11 @@
+{
+  "files.exclude": {
+    "**/.git": false
+  },
+
+  "eslint.workingDirectories": [
+    {
+      "mode": "auto"
+    }
+  ]
+}
