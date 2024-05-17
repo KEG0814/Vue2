@@ -4,14 +4,17 @@
     <hr />
     <div class="row" v-for="(user, idx) in users" :key="idx">
       <h4>{{ user.name }}</h4>
-      <button @click="registerUser(user)">Register</button>
+      <button :disabled="user.isregistering" @click="registerUser(user)">
+        Register
+      </button>
     </div>
   </div>
 </template>
 
 <script>
 import { mapGetters } from "vuex";
-import { mapMutations } from "vuex";
+import { mapActions } from "vuex";
+//import { mapMutations } from "vuex";
 
 export default {
   computed: {
@@ -21,11 +24,15 @@ export default {
   },
 
   methods: {
-    ...mapMutations({
-      registerUser: "userRegistered",
+    // ...mapMutations({
+    //   registerUser: "userRegistered",
+    // }),
+    ...mapActions({
+      registerUser: "register",
     }),
+
     // registerUser(user) {
-    //   this.$store.commit("userRegistered", user);
+    //   this.$store.dispatch("register", user);
     // },
   },
 };

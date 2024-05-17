@@ -15,15 +15,17 @@
 
 <script>
 import { mapGetters } from "vuex";
-import { mapMutations } from "vuex";
+import { mapActions } from "vuex";
+//import { mapMutations } from "vuex";
 
 export default {
   methods: {
-    ...mapMutations({
-      unregister: "userUnregistered",
-    }),
+    // ...mapMutations({
+    //   unregister: "userUnregistered",
+    // }),
+    ...mapActions(["unregister"]),
     // unregister(registration) {
-    //   this.$store.commit("userUnregistered", registration);
+    //   this.$store.dispatch("unregister", registration);
     // },
   },
   computed: {
